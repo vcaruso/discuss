@@ -78,8 +78,9 @@ export async function createComment(
       },
     };
   }
-
+  revalidatePath('/');
   revalidatePath(paths.postShow(topic.slug, postId));
+
   return {
     errors: {},
     success: true,
